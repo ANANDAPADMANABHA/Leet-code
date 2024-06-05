@@ -5,11 +5,11 @@ class Solution(object):
         :type t: str
         :rtype: int
         """
-        ans = 0
-        for i in range(len(s)):
-            for j in range(len(t)):
-                if s[i] == t[j]:
-                    ans += (i-j if i>j else j-i)
-                    break
-                    
-        return ans
+        index_s = {char: idx for idx, char in enumerate(s)}
+        index_t = {char: idx for idx, char in enumerate(t)}
+
+        difference = 0
+        for char in s:
+            difference += abs(index_s[char] - index_t[char])
+
+        return difference
