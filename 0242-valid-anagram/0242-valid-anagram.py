@@ -9,12 +9,15 @@ class Solution(object):
             return False
         
         counter = {}
-        counter2 = {}
         for i in s:
             counter[i] = counter.get(i,0)+1
         
         for i in t:
-            counter2[i] = counter2.get(i,0)+1
-        if counter == counter2:
-            return True
-        return False
+            if i not in  counter:
+                return False
+            counter[i] -= 1
+            
+            if counter[i]<0:
+                return False
+        
+        return True
