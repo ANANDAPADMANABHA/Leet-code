@@ -16,7 +16,7 @@ class Solution(object):
             
         ans = []
         
-        for i in range(len(nums),0,-1):
+        for i in range(len(nums_list)-1,0,-1):
             for j in nums_list[i]:
                 ans.append(j)
                 if len(ans) == k:
