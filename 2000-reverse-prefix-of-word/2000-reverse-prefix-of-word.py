@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: str
         """
         index = word.find(ch)
-        if index == -1:
+        if index == len(word):
             return word  # Return the original string if `ch` is not found
 
         # Convert the string to a list to perform in-place modifications
