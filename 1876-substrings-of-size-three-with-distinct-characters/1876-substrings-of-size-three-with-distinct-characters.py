@@ -6,9 +6,6 @@ class Solution(object):
         """
         
         n = len(s)
-        if n < 3:
-            return 0
-
         good_count = 0
 
         for i in range(n - 2):
