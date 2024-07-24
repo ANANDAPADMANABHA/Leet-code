@@ -9,16 +9,14 @@ class Solution(object):
         p2 = 3
         output = []
         while p2<=len(s):
-            x = []
             a = s[p1:p2]
-            for i in a:
-                if i in x:
-                    '''repeated balue'''
-                    break
-                x.append(i)
-            else:
+            set_a = set(a)
+    
+            list_a = list(a)
+            if len(list_a) == len(set_a):
                 output.append(a)
             p1+=1
             p2+=1
             
         return len(output)
+    
