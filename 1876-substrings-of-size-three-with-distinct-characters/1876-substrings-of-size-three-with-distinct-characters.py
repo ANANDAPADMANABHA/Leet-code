@@ -5,18 +5,17 @@ class Solution(object):
         :rtype: int
         """
         
-        p1 = 0 
-        p2 = 3
-        output = []
-        while p2<=len(s):
-            a = s[p1:p2]
-            set_a = set(a)
-    
-            list_a = list(a)
-            if len(list_a) == len(set_a):
-                output.append(a)
-            p1+=1
-            p2+=1
-            
-        return len(output)
+        n = len(s)
+        if n < 3:
+            return 0
+
+        good_count = 0
+
+        for i in range(n - 2):
+            # Check substring s[i:i+3]
+            substring = s[i:i+3]
+            if len(set(substring)) == 3:
+                good_count += 1
+
+        return good_count
     
