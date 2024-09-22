@@ -9,7 +9,7 @@ class Solution:
                 high = mid  # Move to the left half
             elif nums[mid] > nums[high]:
                 low = mid + 1  # Move to the right half
-            else:
+            elif nums[mid] == nums[high]:
                 # When nums[mid] == nums[high], we can't determine the side, so we reduce high by 1
                 high -= 1
                 
